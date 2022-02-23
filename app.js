@@ -7,7 +7,9 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello World');
-  res.end(setTimeout(60))
+  for (let i = 0; i < 61; i++) {
+  res.write(i);
+  }
 });
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
